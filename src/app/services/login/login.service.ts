@@ -70,7 +70,6 @@ export class LoginService {
   }
 
   AddPokemonToUser(id : number){
-    console.log("add")
     if (this.currentUser() === null) return;
     let userCopy = this.currentUser()!.copy()
     if(userCopy){

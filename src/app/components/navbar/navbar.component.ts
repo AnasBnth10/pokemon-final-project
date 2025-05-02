@@ -14,7 +14,6 @@ export class NavbarComponent {
   router = inject(Router)
 
 logout(){
-  console.log("logout")
 this.loginService.logout()
 this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
   this.router.navigate(['my-pokemons']);

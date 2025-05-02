@@ -51,7 +51,6 @@ export class PokemonDetailsComponent implements OnDestroy {
 
   constructor(){
     effect(() => {
-      console.log("effect called")
       if(this.pokemonService.isLoaded()){
         
         if(this.id$())
@@ -78,7 +77,6 @@ export class PokemonDetailsComponent implements OnDestroy {
     })
 
     this.formGroup.valueChanges.pipe(takeUntil(this.destroy$)).subscribe(value => {
-      console.log(value)
     this.pokemon = Object.assign(new Pokemon(),value)
     })
   }

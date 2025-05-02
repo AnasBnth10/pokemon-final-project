@@ -20,10 +20,7 @@ export class MyPokemonsComponent {
   effect(() => {
     if(this.loginService.isLoaded() && this.pokemonService.isLoaded()){
       const allPokemons = new Map<Number,Pokemon>(this.pokemonService.pokemons.map(pokemon => [pokemon.id,pokemon]))
-      console.log(this.loginService.currentUser())
-      console.log(this.loginService.currentUser()!.pokemonIds.map(id => allPokemons.get(id)))
       this.myPokemons.set(this.loginService.currentUser()!.pokemonIds.map(id => allPokemons.get(id)).filter(pokemon => pokemon != undefined))
-      console.log(this.myPokemons())
     }
   })
  }
