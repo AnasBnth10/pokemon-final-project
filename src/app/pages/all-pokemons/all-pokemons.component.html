@@ -1,0 +1,32 @@
+@if(!this.pokemonService.isLoaded()){
+<h1>Loading</h1>
+}
+@else {
+  <h1>Welcome to the Pokémon Manager App!</h1>
+<p>
+  This Angular application lets you view and manage a list of Pokémon stored locally.
+  As a regular user, you can add your favorite Pokémon to your personal list.
+  Admins can edit existing Pokémon or create new ones with custom details.
+</p>
+<div class="search-container">
+
+    <div class="search-bar">
+        <input type="text" [(ngModel)]="search" class="search-input" placeholder="Search for a pokemon...">
+        <img class="search-icon" src="search-icon.png">
+      </div>
+    
+    <mat-form-field class="select-type">
+      <mat-label>Pokemon Type</mat-label>
+      <mat-select [(ngModel)]="selectedType">
+        <mat-option value="">All pokemons</mat-option>
+        @for (pokemonType of pokemonTypes; track pokemonType) {
+          <mat-option [value]="pokemonType">{{pokemonType | titlecase}}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    
+    </div>
+
+<app-pokemon-list [pokemons]="filteredPokemons()" />
+}
+

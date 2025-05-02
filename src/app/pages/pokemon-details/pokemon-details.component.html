@@ -1,0 +1,88 @@
+@if(!this.pokemonService.isLoaded()){
+<h1>Loading</h1>
+} @else {
+<h1 class="title">{{ pokemon.name | titlecase }}</h1>
+<form [formGroup]="formGroup" (submit)="submit($event)">
+  <div class="pokemon-details">
+    <div class="left-side">
+      <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
+      @if(this.pokemon.id > 0){
+        @if(pokemonAlreadyInList){<button (click)="removePokemonToUser()" class="remove-pokemon" type="button" mat-flat-button>Remove Pokemon -</button>}
+        @else {<button type="button" (click)="addPokemonToUser()" mat-flat-button>Add pokemon +</button>}}     
+    </div>
+
+    <div class="pokemon-details-form">
+      @if(this.pokemon.id > 0){
+      <mat-form-field>
+        <mat-label>ID</mat-label>
+        <input disabled="" matInput [value]="pokemon.id" />
+      </mat-form-field>
+      }
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input  formControlName="name" name="name" type="text" matInput />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>HP</mat-label>
+        <input matInput formControlName="hp" type="number" name="hp" />
+      </mat-form-field>
+
+      <button type="button" mat-raised-button (click)="fileInput.click()">
+        {{fileInput.files?.[0]?.name ?? "Choose file"}}
+      </button>
+      <input
+        (change)="onFileChange($event)"
+        hidden
+        #fileInput
+        type="file"
+        id="file"
+      />
+      <br />
+
+      <mat-form-field class="select-type">
+        <mat-label>Pokemon Type</mat-label>
+        <mat-select formControlName="type">
+          @for (pokemonType of pokemonTypes; track pokemonType) {
+          <mat-option [value]="pokemonType">{{
+            pokemonType | titlecase
+          }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <textarea
+          matInput
+          name="description"
+          formControlName="description"
+          placeholder="Enter a description..."
+        ></textarea>
+      </mat-form-field>
+
+      @if(isAdmin){
+      <div class="card-buttons">
+        @if(this.pokemon.id > 0){
+        <button
+          mat-flat-button
+          (click)="deletePokemon(pokemon!.id)"
+          class="delete-btn"
+        >
+          Delete
+        </button>
+        }
+        <button
+          mat-flat-button
+          type="submit"
+          [disabled]="formGroup.invalid"
+          class="update-btn"
+        >
+          {{ this.pokemon.id > 0 ? "Update" : "Add" }}
+        </button>
+      </div>
+      }
+    </div>
+  </div>
+</form>
+}

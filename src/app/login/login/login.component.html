@@ -1,0 +1,18 @@
+<form [formGroup]="formGroup" class="login-form" (submit)="submit($event)">
+    <h1>Login</h1>
+    @if (errorOnLogging()) {
+        <mat-error>Invalid credentials</mat-error>
+    }
+    <br>
+    <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input  name="username" formControlName="username" type="text" matInput>
+      </mat-form-field>
+    
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password"  type="password" name="password">
+      </mat-form-field>
+
+      <button mat-flat-button type="submit" [disabled]="formGroup.invalid" class="update-btn">Login</button>
+</form>

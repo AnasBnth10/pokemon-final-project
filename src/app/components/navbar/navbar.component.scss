@@ -1,0 +1,36 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f2937 ;
+    margin-bottom: 3rem;
+    padding: 0;
+    font-size: 1.2rem;
+    color: #f9fafb;
+}
+
+.left-side {
+    padding: 1rem;
+}
+
+.navbar a {
+    color: #f9fafb;
+    padding: 1rem 1.5rem;
+    
+    text-decoration: none;
+}
+
+.navbar a:hover{
+background-color: white;
+color: black;
+}
+
+.delete-btn {
+    margin-left: 1rem;
+    background-color: red !important;
+}
+
+.delete-btn:hover {
+    background-color: white !important;
+    color: black !important;
+}

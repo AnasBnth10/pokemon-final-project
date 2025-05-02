@@ -1,0 +1,41 @@
+.pokemon-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.pokemon-details-form {
+    background-color: lightgray;
+    padding: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    margin-top: 3rem;
+}
+
+.card-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete-btn {
+    background-color: red !important;
+}
+
+.update-btn {
+    margin-left: auto;
+}
+
+.left-side {
+    vertical-align: top;
+    display: flex;
+    flex-direction: column;
+}
+h1 {
+    text-align: center;
+}
+
+.remove-pokemon {
+    background-color: red !important;
+}

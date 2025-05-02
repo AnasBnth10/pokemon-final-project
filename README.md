@@ -1,6 +1,35 @@
 # PokemonFinalProject
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
+This is a web application built with Angular that simulates a basic Pokémon management interface.
+
+🔍 Overview
+The app uses Angular 16+ and stores data in LocalStorage.
+
+A default list of Pokémon is initialized on first load.
+
+Users can log in, view all available Pokémon, and add their favorites to a personal list.
+
+If you're logged in as an Admin, you can:
+
+- Create new Pokémon
+
+- Edit existing Pokémon (image, name, description, HP, type)
+
+👤 Demo Accounts
+You can log in with one of the following predefined users:
+
+- Admin user
+
+    Username: anas123
+
+    Password: anaspwd
+
+- Regular user
+
+    Username: ash123
+
+    Password: pikachu
 
 ## Development server
 

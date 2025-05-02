@@ -1,0 +1,55 @@
+mat-card{
+    border-radius: 0.4rem;
+    width: 19.3rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    height: 35rem;
+    
+}
+
+mat-card:hover {
+cursor: pointer;
+}
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.name,.hp {
+    font-weight: bolder;
+    font-size: 1.1rem;
+}
+
+.right-header {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.type-logo {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+img[mat-card-image] {
+    height: 14.5rem;
+}
+
+.type-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.mat-mdc-card-content {
+    margin: 1rem 0;
+    padding: 0 !important;
+}
+
+
+
+
+
+

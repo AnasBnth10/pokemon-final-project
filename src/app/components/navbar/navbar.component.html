@@ -1,0 +1,12 @@
+<div class="navbar">
+  <div class="left-side">User: {{loginService.currentUser()?.firstName}} {{loginService.currentUser()?.lastName}}</div>
+  <div class="right-side">
+    <a href="home">All pokemons</a>
+     <a href="my-pokemons">My pokemons</a>
+     <button
+          mat-flat-button
+          (click)="logout()"
+          class="delete-btn"
+        >Log out</button>
+  </div>
+</div>

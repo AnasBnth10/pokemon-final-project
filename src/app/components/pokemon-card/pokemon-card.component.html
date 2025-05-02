@@ -1,0 +1,30 @@
+
+
+<mat-card class="example-card" (click)="viewPokemonDetails(pokemon()!.id)" [style.backgroundColor]="cardProperties().color" appearance="outlined">
+  <div class="card-header">
+    <p class="name">{{pokemon()!.name | titlecase}}</p>
+
+    <div class="right-header">
+    <p class="hp">{{pokemon()!.hp}} HP</p>
+    <img src="{{cardProperties().typeLogo}}" class="type-logo" alt="type-logo">
+  </div>
+
+  </div>
+  
+
+  <img mat-card-image [src]="pokemon()?.img || 'no-pokemon-image.jpg'" [alt]="pokemon()?.img ?? 'no-pokemon-image.jpg'" />
+  <mat-card-content>
+
+    <div class="type-section">
+      <h3>{{ pokemon()!.type | titlecase }}</h3>
+      <div>
+      <img src="{{cardProperties().typeLogo}}" class="type-logo" alt="type-logo">
+      <img src="{{cardProperties().typeLogo}}" class="type-logo" alt="type-logo">
+    </div>
+    </div>
+    
+    <p>
+      {{this.pokemon()?.description}}
+    </p>
+  </mat-card-content>
+</mat-card>
